@@ -36,7 +36,7 @@ async def handle_image(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         # Send as native spoiler
         await update.message.chat.send_photo(
             photo=open(original_path, "rb"),
-            caption="⚠️ This image may contain NSFW content.",
+            caption=f"⚠️ This image may contain NSFW content.\nProbability: {nsfw_score * 100:.2f}%",
             has_spoiler=True
         )
     
