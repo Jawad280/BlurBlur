@@ -39,14 +39,14 @@ async def handle_image(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
             caption="⚠️ This image may contain NSFW content.",
             has_spoiler=True
         )
-
-        # Optional: remove file
-        os.remove(original_path)
-    else:
-        # Image is safe – do nothing, no response needed
-        os.remove(original_path)
+    
+    # Clean up
+    os.remove(original_path)
 
 app = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(CommandHandler("hello", hello))
 app.add_handler(MessageHandler(filters.PHOTO, handle_image))
-app.run_polling()
+
+if __name__ == "__main__":
+    print("Starting BlurBlur bot...")
+    app.run_polling()
