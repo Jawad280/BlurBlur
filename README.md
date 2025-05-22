@@ -12,5 +12,4 @@ It automatically detects NSFW images using deep learning and applies a native Te
 
 ## 🧠 Powered By
 
-This bot uses the [`opennsfw2`](https://github.com/bhky/opennsfw2) model — a reimplementation of Yahoo's OpenNSFW deep learning classifier.  
-It is optimized for speed and can run without GPU.
+This bot uses the [`opennsfw2`](https://github.com/bhky/opennsfw2) model — a keras reimplementation of Yahoo's OpenNSFW deep learning classifier.
